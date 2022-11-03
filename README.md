@@ -3,6 +3,7 @@
 Estudos desenvolvidos na plataforma:
  - Exercícios;
  - Desafios;
+ - Projetos;
  - Bootcamps.
  
 ## Divulgação Redes :newspaper:
