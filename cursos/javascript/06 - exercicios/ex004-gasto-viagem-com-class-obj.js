@@ -5,26 +5,23 @@
 */
 
 class Carro {
-    modelo;
     marca;
     cor;
     consumoMedio;
 
-    constructor(modelo, marca, cor, consumoMedio) {
-        this.modelo = modelo;
+    constructor(marca, cor, consumoMedio) {
         this.marca = marca;
         this.cor = cor;
         this.consumoMedio = consumoMedio;
     }
+
+    calcularGastoViagem(distanciaKm, precoCombustivel) {
+        return (distanciaKm / this.consumoMedio) * precoCombustivel;
+    }
 }
 
-function calcularGastoViagem(carro, distanciaKm, precoCombustivel) {
-    const gastoViagem = (distanciaKm / carro.consumoMedio) * precoCombustivel;
-    console.log(`O ${carro.modelo} ${carro.cor} da marca ${carro.marca}, terá um gasto de R$${gastoViagem} nesta viagem.`);
-}
+const punto = new Carro('Fiat', 'Preto', 10);
+const hb20 = new Carro('Hyundai', 'Branco', 8);
 
-const carro1 = new Carro('Punto', 'Fiat', 'Preto', 10);
-const carro2 = new Carro('HB20','Hyundai', 'Branco', 8);
-
-calcularGastoViagem(carro1, 100, 5);
-calcularGastoViagem(carro2, 200, 7);
+console.log(punto.calcularGastoViagem(100, 5));
+console.log(hb20.calcularGastoViagem(200, 7));
