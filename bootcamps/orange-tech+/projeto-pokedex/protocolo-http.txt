@@ -1,0 +1,64 @@
+Request HTTP
+
+1. URL: https://pokeapi.co/api/v2/pokemon/?type=grass&name=i
+     ${IP}/${path = caminho de identificação do recurso}
+
+    IP: https://pokeapi.co (DNS converte domínio para IP correspondente)
+        http://127.0.0.1:3000 (exemplo)
+
+2. Request Method: GET (buscar recurso) | POST (inserir dados) | PUT (atualizar dados) | DELETE (apagar) | entre outros
+
+    Método GET
+
+        Path Params
+        - Requisita informações da API direto no path, exemplo:
+            https://pokeapi.co/api/v2/pokemon/1 (dados pokemon bulbasaur)
+
+        Querry String
+        - Identificadores após path para filtrar dados desejados, exemplo:
+            https://pokeapi.co/api/v2/pokemon/?type=grass&name=i
+                - ? (início querry string)
+                - type = grass
+                - &
+                - name = i (começa com i).
+
+3. Headers
+    - Configuração da requisição
+
+    - Request Header (configuração para solicitação de dados), exemplo:
+    - accept-language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+        pt-BR // prioridade máxima (;q=1)
+        pt;q=0.9 // q = nível de prioridade
+        en-US;q=0.8
+        en;q=0.7
+    - No request também é passado o tipo de autoriação:
+        authorization: Basic | Bearer
+
+    - Response Header (o que servidor devolve como resposta efetivamente)
+
+4. Request Body
+    - Faz mais sentido em métodos POST / PUT / PATCH, por serem mais robusto (envio de grande volume de dados)
+
+    - exemplo:
+
+        Request Header
+            content-type: application/json
+
+        Body
+        {
+            "name": "Teste"
+        }
+
+
+Response HTTP
+
+1. Status Code
+    - Número indicativo informando o que houve com requisição feita, exemplo:
+        - família 200-299: sucesso
+        - família 300-399: redirecionamento para outro HTTP (site em manutenção por exemplo)
+        - família 400-499: erro parte client
+        - família 500-599: erro interno servidor
+
+2. Response Headers
+
+3. Response Body 
