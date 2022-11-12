@@ -18,6 +18,7 @@ body {
 }
 
 main {
+    font-family: 'Roboto', sans-serif;
     height: 700px;
     width: 350px;
     background-color: #fff;
@@ -26,6 +27,95 @@ main {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    background-color: #8CD652;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.356);
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    padding: 1.1rem;
+}
+
+.pagination button {
+    background-color: #787980;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    padding: .35rem .5rem;
+    margin: .25rem 0;
+    font-size: .825rem;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.200);
+}
+
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: .25rem;
+    font-size: 2.5rem;
+}
+
+.types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.type {
+    color: #fff;
+    margin: 0.5rem;
+    padding: .5rem .7rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.200);
+}
+
+.img {
+    width: 300px;
+    height: 222px;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.stats {
+    width: 300px;
+    height: 235px;
+    margin: 2rem auto;
+    padding: .3rem;
+    border-radius: .5rem;
+    background-color: #fff;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.411);
+}
+
+h2 {
+    margin-left: 1.3rem;
+    padding: 0.2rem;
+}
+
+.listData {
+    padding: 0;
+    margin: auto;
+    list-style: none;
+}
+
+label {
+    padding: 0.2rem;
+}
+
+li {
+    margin-left: 1rem;
+}
+
+.typeStats {
+    display: inline-block;
+    width: 4rem;
+    text-align: left;
 }
 
 @media screen and (min-width: 992px) {
