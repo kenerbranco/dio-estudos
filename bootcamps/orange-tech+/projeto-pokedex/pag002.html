@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/pokemon-details.css">
+</head>
+<body>
+    <main class="content">
+        <div class="pagination">
+            <button id="voltar" type="button">Voltar</button>
+        </div>
+
+        <section class="namePokemon">
+            <h1>Nome Pokemon</h1>
+            <span>Type 1</span>
+            <span>Type 2</span>
+        </section>
+
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Bulbasaur">
+
+        <section class="stats">
+            <div class="about">
+                <h2>About</h2>
+                <ul>
+                    <li>Id: #001</li>
+                    <li>Height: 0.7cm</li>
+                    <li>Weight: 6.9Kg</li>
+                    <li>Abilities: Overgrow / Chlorophyl</li>
+                </ul>
+            </div>
+            <div class="base">
+                <h2>Base Stats</h2>
+                <ul>
+                    <li>
+                        <span>HP</span>
+                        <label for="hp">10</label>
+                        <progress id="hp" value="10" max="100"></progress>
+                    </li>
+                    <li>
+                        <span>Attack</span>
+                        <label for="atk">20</label>
+                        <progress id="atk" value="20" max="100"></progress>
+                    </li>
+                    <li>
+                        <span>Defense</span>
+                        <label for="def">30</label>
+                        <progress id="def" value="30" max="100"></progress>
+                    </li>
+                    <li>
+                        <span>Speed</span>
+                        <label for="speed">40</label>
+                        <progress id="speed" value="40" max="100"></progress>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/pokemon-model.js"></script>
+    <script src="assets/js/poke-api.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
