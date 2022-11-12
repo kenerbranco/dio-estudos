@@ -2,15 +2,14 @@
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
 }
 
 body {
-    background-color: #fff;
+    background-color: rgb(211, 211, 211);
 }
 
-header {
-    height: 30vh;
+#backgroundHeader {
+    height: 20vh;
     background-image: url('../images/background-header.png');
     background-position: center center;
     background-size: cover;
@@ -21,8 +20,11 @@ header {
 .content {
     width: 100vw;
     height: 100vh;
-    padding: 1rem;
     background-color: #fff;
+}
+
+.content ol {
+    padding: 1rem;
 }
 
 @media screen and (min-width: 992px) {
