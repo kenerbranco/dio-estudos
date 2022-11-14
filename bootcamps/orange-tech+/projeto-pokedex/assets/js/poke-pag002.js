@@ -1,3 +1,4 @@
 function clickPokemon(pokemon) {
-    console.log(pokemon)
+    const numberPokemon = Number(pokemon)
+    console.log(numberPokemon)
 }
