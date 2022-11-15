@@ -1,5 +1,3 @@
-const pokemonPageTwo = document.getElementById('pokemonPageTwo')
-
 function clickPokemon(id, name, typeOne, typeTwo = '', photo) {
     const pokemonNumber = id
     const pokemonName = name
@@ -7,22 +5,21 @@ function clickPokemon(id, name, typeOne, typeTwo = '', photo) {
     const pokemonTypeTwo = typeTwo
     const pokemonPhoto = photo
 
+    const pokemonHtml = document.getElementById('pokemonAbout')
+
     const newHtml = `
-        <div class="pagination">
-            <button id="voltar" type="button" onclick="location.href='index.html';">Voltar</button>
+        <div class="backPage">
+        <button id="voltar" type="button" onclick="location.href='index.html';">Voltar</button>
         </div>
 
         <h1>${pokemonName}</h1>
-
         <section class="types">
             <div class="type">${pokemonTypeOne}</div>
             <div class="type">${pokemonTypeTwo}</div>
         </section>
-
         <p class="img">
             <img src="${pokemonPhoto}" alt="${pokemonName}">
         </p>
-
         <section class="stats">
             <div class="about">
                 <h2>About</h2>
@@ -60,5 +57,5 @@ function clickPokemon(id, name, typeOne, typeTwo = '', photo) {
             </div>
         </section>
         `
-        pokemonPageTwo.innerHTML += newHtml
+        pokemonHtml.innerHTML += newHtml
 }

@@ -8,8 +8,8 @@ let offset = 0
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map((pokemon) => `
-            <a href="pag002.html">
-                <li class="pokemon ${pokemon.type}" onclick="clickPokemon('${pokemon.number}', '${pokemon.name}', '${pokemon.types[0]}', '${pokemon.types[1]}', '${pokemon.photo}')">
+            <a href="pag002.html" onclick="clickPokemon('${pokemon.number}', '${pokemon.name}', '${pokemon.types[0]}', '${pokemon.types[1]}', '${pokemon.photo}')">
+                <li class="pokemon ${pokemon.type}">
                     <span class="number">#${pokemon.number}</span>
                     <span class="name">${pokemon.name}</span>
 

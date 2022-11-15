@@ -13,7 +13,7 @@ body {
     position: relative;
 }
 
-#pokemonPageTwo {
+main {
     font-family: 'Roboto', sans-serif;
     height: 700px;
     width: 350px;
@@ -27,7 +27,7 @@ body {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.356);
 }
 
-.pagination {
+.backPage {
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -36,7 +36,7 @@ body {
     padding: 1.1rem;
 }
 
-.pagination button {
+.backPage button {
     background-color: #787980;
     color: #fff;
     border: none;
