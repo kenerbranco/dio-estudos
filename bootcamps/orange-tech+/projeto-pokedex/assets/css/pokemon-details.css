@@ -13,7 +13,7 @@ body {
     position: relative;
 }
 
-main {
+#pokemonPageTwo {
     font-family: 'Roboto', sans-serif;
     height: 700px;
     width: 350px;
