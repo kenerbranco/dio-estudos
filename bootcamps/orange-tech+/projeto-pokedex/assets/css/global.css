@@ -9,7 +9,7 @@ body {
 }
 
 #backgroundHeader {
-    height: 20vh;
+    height: 30vh;
     background-image: url('../images/background-header.png');
     background-position: center center;
     background-size: cover;
