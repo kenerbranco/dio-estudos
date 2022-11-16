@@ -1,15 +1,20 @@
 function clickPokemon(id, name, typeOne, typeTwo = '', photo) {
+
     const pokemonNumber = id
     const pokemonName = name
     const pokemonTypeOne = typeOne
     const pokemonTypeTwo = typeTwo
     const pokemonPhoto = photo
 
+}
+
+function loadPage() {
+
     const pokemonHtml = document.getElementById('pokemonAbout')
 
     const newHtml = `
         <div class="backPage">
-        <button id="voltar" type="button" onclick="location.href='index.html';">Voltar</button>
+            <button id="voltar" type="button" onclick="location.href='index.html';">Voltar</button>
         </div>
 
         <h1>${pokemonName}</h1>
@@ -56,6 +61,6 @@ function clickPokemon(id, name, typeOne, typeTwo = '', photo) {
                 </ul>
             </div>
         </section>
-        `
-        pokemonHtml.innerHTML += newHtml
+    `
+    pokemonHtml.innerHTML = newHtml
 }
