@@ -21,7 +21,7 @@ function loadPokemonItens(offset, limit) {
                         <img src="${pokemon.photo}" alt="${pokemon.name}">
                     </div>
                 </li>
-            </a>  
+            </a> 
         `).join('')
         
         pokemonList.innerHTML += newHtml
@@ -48,3 +48,17 @@ loadMoreButton.addEventListener('click', () => {
     }
 
 })
+
+
+// Extração dados pokemon para pag002
+function clickPokemon(id, name, typeOne, typeTwo = '', photo) {
+
+    const pokemonNumber = id
+    const pokemonName = name
+    const pokemonTypeOne = typeOne
+    const pokemonTypeTwo = typeTwo
+    const pokemonPhoto = photo
+    
+}
+
+
