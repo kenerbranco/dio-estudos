@@ -5,10 +5,12 @@ const maxRecords = 151
 const limit = 6
 let offset = 0
 
+let childWindowHandle = null
+
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map((pokemon) => `
-            <a href="pag002.html" onclick="clickPokemon('${pokemon.number}', '${pokemon.name}', '${pokemon.types[0]}', '${pokemon.types[1]}', '${pokemon.photo}')">
+            <button type="button" onclick="clickPokemon('${pokemon.number}', '${pokemon.name}', '${pokemon.type}', '${pokemon.types}', '${pokemon.photo}')">
                 <li class="pokemon ${pokemon.type}">
                     <span class="number">#${pokemon.number}</span>
                     <span class="name">${pokemon.name}</span>
@@ -21,7 +23,7 @@ function loadPokemonItens(offset, limit) {
                         <img src="${pokemon.photo}" alt="${pokemon.name}">
                     </div>
                 </li>
-            </a> 
+            </button>
         `).join('')
         
         pokemonList.innerHTML += newHtml
@@ -49,16 +51,21 @@ loadMoreButton.addEventListener('click', () => {
 
 })
 
-
-// Extração dados pokemon para pag002
-function clickPokemon(id, name, typeOne, typeTwo = '', photo) {
-
-    const pokemonNumber = id
-    const pokemonName = name
-    const pokemonTypeOne = typeOne
-    const pokemonTypeTwo = typeTwo
-    const pokemonPhoto = photo
+// Extrai dados do pokemon selecionado e envia para page "pokemon-detail.html"
+function clickPokemon(id, name, type, types, photo) {
     
+    const pokemonDetail = {
+        numero: id, 
+        nome: name,
+        tipo: type,
+        tipos: types,
+        foto: photo
+    }
+
+    childWindowHandle = window.open('pokemon-detail.html', '_self')
+    childWindowHandle.processParentMessage(pokemonDetail)
+
 }
+    
 
 
