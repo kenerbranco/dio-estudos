@@ -10,7 +10,7 @@ let childWindowHandle = null
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map((pokemon) => `
-            <button type="button" onclick="clickPokemon('${pokemon.number}', '${pokemon.name}', '${pokemon.type}', '${pokemon.types}', '${pokemon.photo}')">
+            <button type="button" class="buttonPokemon" onclick="clickPokemon('${pokemon.number}', '${pokemon.name}', '${(pokemon.types[0])}', '${(pokemon.types)[1]}', '${pokemon.photo}')">
                 <li class="pokemon ${pokemon.type}">
                     <span class="number">#${pokemon.number}</span>
                     <span class="name">${pokemon.name}</span>
@@ -52,13 +52,13 @@ loadMoreButton.addEventListener('click', () => {
 })
 
 // Extrai dados do pokemon selecionado e envia para page "pokemon-detail.html"
-function clickPokemon(id, name, type, types, photo) {
+function clickPokemon(id, name, typeOne, typeTwo = '', photo) {
     
     const pokemonDetail = {
         numero: id, 
         nome: name,
-        tipo: type,
-        tipos: types,
+        tipoUm: typeOne,
+        tipoDois: typeTwo,
         foto: photo
     }
 

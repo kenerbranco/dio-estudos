@@ -65,6 +65,11 @@ a {
     text-decoration: none;
 }
 
+.buttonPokemon {
+    background: none;
+    border: none;
+}
+
 .pokemon {
     display: flex;
     flex-direction: column;
@@ -125,7 +130,7 @@ a {
 }
 
 .pagination button {
-    background-color: #6c79db;
+    background-color: #787980;
     color: #fff;
     border: none;
     border-radius: 1rem;
