@@ -2,6 +2,10 @@ function processParentMessage(objDetail = {}) {
 
     const pokemon = objDetail
     const pokemonTipos = [pokemon.tipoUm, pokemon.tipoDois]
+
+    if (pokemon.habilidadeDois == 'undefined') {
+        pokemon.habilidadeDois = 'NA'
+    }
     
     if (pokemonTipos[1] == 'undefined') {
             document.write(`
@@ -38,9 +42,9 @@ function processParentMessage(objDetail = {}) {
                             <h2>About</h2>
                             <ul class="listData">
                                 <li>Id: ${pokemon.numero}</li>
-                                <li>Height: 0.7cm</li>
-                                <li>Weight: 6.9Kg</li>
-                                <li>Abilities: Overgrow / Chlorophyl</li>
+                                <li>Height: ${pokemon.altura} cm</li>
+                                <li>Weight: ${pokemon.peso} Kg</li>
+                                <li>Abilities: ${pokemon.habilidadeUm} / ${pokemon.habilidadeDois}</li>
                             </ul>
                         </div>
                         <div class="base">
@@ -48,23 +52,23 @@ function processParentMessage(objDetail = {}) {
                             <ul class="listData">
                                 <li>
                                     <div class="typeStats">HP</div>
-                                    <label for="hp">10</label>
-                                    <progress id="hp" value="10" max="100"></progress>
+                                    <label for="hp">${pokemon.hp}</label>
+                                    <progress id="hp" value="${pokemon.hp}" max="250"></progress>
                                 </li>
                                 <li>
                                     <div class="typeStats">Attack</div>
-                                    <label for="atk">20</label>
-                                    <progress id="atk" value="20" max="100"></progress>
+                                    <label for="atk">${pokemon.atk}</label>
+                                    <progress id="atk" value="${pokemon.atk}" max="250"></progress>
                                 </li>
                                 <li>
                                     <div class="typeStats">Defense</div>
-                                    <label for="def">30</label>
-                                    <progress id="def" value="30" max="100"></progress>
+                                    <label for="def">${pokemon.def}</label>
+                                    <progress id="def" value="${pokemon.def}" max="250"></progress>
                                 </li>
                                 <li>
                                     <div class="typeStats">Speed</div>
-                                    <label for="speed">40</label>
-                                    <progress id="speed" value="40" max="100"></progress>
+                                    <label for="speed">${pokemon.vel}</label>
+                                    <progress id="speed" value="${pokemon.vel}" max="250"></progress>
                                 </li>
                             </ul>
                         </div>
@@ -110,9 +114,9 @@ function processParentMessage(objDetail = {}) {
                             <h2>About</h2>
                             <ul class="listData">
                                 <li>Id: ${pokemon.numero}</li>
-                                <li>Height: 0.7cm</li>
-                                <li>Weight: 6.9Kg</li>
-                                <li>Abilities: Overgrow / Chlorophyl</li>
+                                <li>Height: ${pokemon.altura} cm</li>
+                                <li>Weight: ${pokemon.peso} Kg</li>
+                                <li>Abilities: ${pokemon.habilidadeUm} / ${pokemon.habilidadeDois}</li>
                             </ul>
                         </div>
                         <div class="base">
@@ -120,23 +124,23 @@ function processParentMessage(objDetail = {}) {
                             <ul class="listData">
                                 <li>
                                     <div class="typeStats">HP</div>
-                                    <label for="hp">10</label>
-                                    <progress id="hp" value="10" max="100"></progress>
+                                    <label for="hp">${pokemon.hp}</label>
+                                    <progress id="hp" value="${pokemon.hp}" max="250"></progress>
                                 </li>
                                 <li>
                                     <div class="typeStats">Attack</div>
-                                    <label for="atk">20</label>
-                                    <progress id="atk" value="20" max="100"></progress>
+                                    <label for="atk">${pokemon.atk}</label>
+                                    <progress id="atk" value="${pokemon.atk}" max="250"></progress>
                                 </li>
                                 <li>
                                     <div class="typeStats">Defense</div>
-                                    <label for="def">30</label>
-                                    <progress id="def" value="30" max="100"></progress>
+                                    <label for="def">${pokemon.def}</label>
+                                    <progress id="def" value="${pokemon.def}" max="250"></progress>
                                 </li>
                                 <li>
                                     <div class="typeStats">Speed</div>
-                                    <label for="speed">40</label>
-                                    <progress id="speed" value="40" max="100"></progress>
+                                    <label for="speed">${pokemon.vel}</label>
+                                    <progress id="speed" value="${pokemon.vel}" max="250"></progress>
                                 </li>
                             </ul>
                         </div>

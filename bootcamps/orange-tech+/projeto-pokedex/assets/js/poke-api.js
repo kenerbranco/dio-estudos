@@ -12,6 +12,24 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.type = type
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
+    // Incremento do desafio, + detalhes para "pokemon-detail.html"
+    pokemon.height = pokeDetail.height / 10 // Convertido para cm
+    pokemon.weight = pokeDetail.weight / 10 // COnvertido para Kg
+
+    const abilities = pokeDetail.abilities.map((abilitySlot) => abilitySlot.ability.name)
+    pokemon.abilities = abilities
+
+    const stats = pokeDetail.stats.map((baseStat) => baseStat.base_stat)
+    pokemon.stats = stats
+    /* 
+        Valores Array "pokemon.stats"
+
+        posição 0 - valor hp
+        posição 1 - valor attack
+        posição 2 - valor defense
+        posição 5 - valor speed
+    */
+
     return pokemon
 }
 
