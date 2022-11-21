@@ -157,8 +157,11 @@ h2 {
     padding: 0;
     margin: auto;
     list-style: none;
-    text-transform: capitalize;
     font-size: 0.9rem;
+}
+
+.abilitites {
+    text-transform: capitalize;
 }
 
 label {
