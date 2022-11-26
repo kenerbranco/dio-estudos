@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../../assets/logo-dio.png';
+import { useNavigate } from 'react-router-dom';
+import { MdMenu } from 'react-icons/md';
 import { Button } from '../Button';
 import {
     BuscarInputContainer,
@@ -8,25 +10,46 @@ import {
     Menu,
     MenuRight,
     Row,
-    Wrapper
+    UserPicture,
+    Wrapper,
 } from './style'
 
-const Header = () => {
-  return (
+const Header = ({autenticado}) => {
+
+    const navigateHome = useNavigate();
+
+    const handClickHome = () => {
+        navigateHome('/')
+    }
+
+    return (
     <Wrapper>
         <Container>
             <Row>
-                <img src={logo} alt="logo da dio" />
-                <BuscarInputContainer>
-                    <Input placeholder="Busca..."/>
-                </BuscarInputContainer>
-                <Menu>Live Code</Menu>
-                <Menu>Global</Menu>
+                <img src={logo} alt="logo da dio" onClick={handClickHome}/>
+                {autenticado ? (
+                    <>
+                        <BuscarInputContainer>
+                            <Input placeholder="Busca..."/>
+                        </BuscarInputContainer>
+                        <Menu>Live Code</Menu>
+                        <Menu>Global</Menu>
+                    </>
+                ) : null}
             </Row>
             <Row>
-                <MenuRight href="#">Home</MenuRight>
-                <Button title="Entrar"/>
-                <Button title="Cadastrar"/>
+                {autenticado ? (
+                    <>
+                        <UserPicture src="https://avatars.githubusercontent.com/u/115368851?v=4"/>
+                            <MdMenu size={28}/>
+                    </>
+                ) : (
+                    <>
+                        <MenuRight href="#">Home</MenuRight>
+                        <Button title="Entrar"/>
+                        <Button title="Cadastrar"/>
+                    </>
+                    )}
             </Row>
         </Container>
     </Wrapper>
