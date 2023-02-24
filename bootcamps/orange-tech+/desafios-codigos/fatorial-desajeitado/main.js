@@ -6,31 +6,32 @@ const { gets, print } = require('./funcoes-auxiliares');
 
 function fatorial(n) {
     let cont = 1; // Contador para as operações / * + -
-    let total = n;
+    let total = n.toString();
     let num = n;
     let i = n;
 
     for (i; i > 1; i--) {
         
         num = num - 1;
+        const numString = num.toString(); 
 
         if (cont == 1) {
-            total = total * num;
+            total = total + "*" + numString;
             cont++;
         } else if (cont == 2) {
-            total = total / num;
+            total = total + "/" + numString;
             cont++;
         } else if (cont == 3) {
-            total = total + num;
+            total = total + "+" + numString;
             cont++;
         } else if (cont == 4) {
-            total = total - num;
+            total = total + "-" + numString;
             cont = 1;
         }
-
-    }
     
-    return parseInt(total);
+    }
+
+    return parseFloat(total);
 }
 
 
@@ -47,7 +48,5 @@ if (n <= 2) {
     print(r);
 
 }
-
-
 
 // TODO: Calcule o valor do fatorial de "n", atribuindo o retorno a "r".
