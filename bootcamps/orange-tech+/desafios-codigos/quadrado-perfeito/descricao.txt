@@ -1,0 +1,7 @@
+Desafio  
+Dado um inteiro n, retorne o menor número de números quadrados perfeitos cuja soma seja n. Um quadrado perfeito é um inteiro que é o quadrado de um inteiro; em outras palavras, é o produto de algum inteiro consigo mesmo. Por exemplo, 1, 4, 9 e 16 são quadrados perfeitos, enquanto 3 e 11 não são. 
+
+Exemplo:
+entrada: 12 / saída: 3 (4 + 4 + 4)
+entrada: 13 / saída: 2 (9 + 4)
+entrada: 10 / saída: 2 (9 + 1)
