@@ -4,34 +4,67 @@ const { gets, print } = require('./funcoes-auxiliares');
 // - "gets" : lê UMA linha com dado(s) de entrada (inputs) do usuário; 
 // - "print": imprime um texto de saída (output) e pula uma linha ("\n") automaticamente. 
 
-function fatorial(n) {
-    let cont = 1; // Contador para as operações / * + -
-    let total = n.toString();
-    let num = n;
-    let i = n;
-
-    for (i; i > 1; i--) {
-        
-        num = num - 1;
-        const numString = num.toString(); 
-
-        if (cont == 1) {
-            total = total + "*" + numString;
-            cont++;
-        } else if (cont == 2) {
-            total = total + "/" + numString;
-            cont++;
-        } else if (cont == 3) {
-            total = total + "+" + numString;
-            cont++;
-        } else if (cont == 4) {
-            total = total + "-" + numString;
-            cont = 1;
-        }
+function criaArray(n) {
     
+    let arr = [];
+    let num = n;
+    arr[0] = num;
+
+    for (let i=1; i<n; i++) {
+
+        num = num - 1;
+        arr[i] = num;
+
     }
 
-    return parseFloat(total);
+    return arr;
+     
+}
+
+function fatorial(n) {
+    
+    const arrNumeros = criaArray(n);
+    let cont = 1;
+    let num = arrNumeros[0];
+    let arrSomaFinal = [];
+
+    for (let i=1; i<arrNumeros.length; i++) {
+
+        if (cont == 1) {
+            num = num * arrNumeros[i];
+            cont++;
+            if (i == (arrNumeros.length - 1)) {
+                arrSomaFinal.push(parseInt(num));
+            }
+        } else if (cont == 2) {
+            num = num / arrNumeros[i];
+            cont++;
+            arrSomaFinal.push(parseInt(num));
+        } else if (cont == 3) {
+            arrSomaFinal.push(arrNumeros[i]);
+            cont++;
+        } else if (cont == 4) {
+            num = arrNumeros[i];
+            cont = 1;
+            if (i == (arrNumeros.length - 1)) {
+                arrSomaFinal.push(parseInt(num));
+            }
+        }
+
+    }
+
+    const valorFinal = arrSomaFinal.reduce((accumulator, currentValue, index) => {
+
+        if (index % 2 != 0) {
+            return accumulator + currentValue;
+        } else {
+            return accumulator - currentValue;
+        }
+
+    });
+
+    return valorFinal;
+
 }
 
 
