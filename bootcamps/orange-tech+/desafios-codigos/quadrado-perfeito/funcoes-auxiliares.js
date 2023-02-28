@@ -1,4 +1,4 @@
-const entradas = [3];
+const entradas = [100];
 let i = 0;
 
 function gets() {
